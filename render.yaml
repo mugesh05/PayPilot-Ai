@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: paypilot-ai
+    runtime: node
+    plan: free
+    buildCommand: pnpm install && pnpm run build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      - key: PAYPAL_ENVIRONMENT
+        value: sandbox
+      - key: NEXT_PUBLIC_PAYPAL_CLIENT_ID
+        value: sb
+      - key: PAYPAL_CLIENT_ID
+        value: sb
