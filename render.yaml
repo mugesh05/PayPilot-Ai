@@ -3,7 +3,7 @@ services:
     name: paypilot-ai
     runtime: node
     plan: free
-    buildCommand: pnpm install && pnpm run build
+    buildCommand: pnpm install --reporter=silent && pnpm approve-builds --all && pnpm run build
     startCommand: pnpm start
     envVars:
       - key: NODE_VERSION
